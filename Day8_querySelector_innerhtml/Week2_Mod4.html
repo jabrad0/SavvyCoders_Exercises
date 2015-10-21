@@ -1,0 +1,418 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Hello While</title>
+<style>
+#pretty{
+  color: red;
+  border: groove orange 30px;
+}
+#FizzBuzz{
+  color: blue;
+}
+#Fizz{
+  color: green;
+}
+#Buzz{
+  color: red;
+}
+.Fuzzies{
+  background-color: pink;
+  width:60%;
+  margin:0 auto;
+  padding: 10px;
+
+}
+
+</style>
+</head>
+
+<body>
+    <h1>Hello While...</h1>
+
+<div id="lyrics"></div>
+<div id="target"></div>
+<div id="product"></div>
+<div id="numbers"></div>
+
+
+<div class="Fuzzies" id="FizzBuzz"></div>
+<div class="Fuzzies" id="Fizz"></div>
+<div class="Fuzzies" id="Buzz"></div>
+
+<script>
+
+//Exercise 1
+// i = 0
+// while (i<=50){
+//     console.log(i);
+//     i += 2;
+// }
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 2 part 1
+
+// var n = 100;
+// var song = ' ';
+//
+// while ( n >= 0) {
+//   if ( n !== 0) {
+//     song = song + ' ' + n + " bottles of beer on the wall!"
+//   } else {
+//     song += " No bottles of beer on the wall!"
+//   }
+//   n--
+// }
+//
+// document.querySelector('#lyrics').textContent = song
+
+//--------------------------------------------------------
+// Exercise 2 part 2
+
+// var n = 100;
+// var song = '<ul id="lyrics">';
+//
+// while ( n >= 0) {
+//   if ( n !== 0) {
+//     song = song + '<li>' + n + " bottle" + (n === 1 ? '' : 's')
+//     + "of beer on the wall!</li>"
+//   } else {
+//     song += " <li>No bottles of beer on the wall!</li>"
+//   }
+//   n--
+// }
+// song += "</ul>"
+// document.querySelector('#lyrics').innerHTML = song
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 3 Fencepost Loop part 1
+
+// var n = 10;
+// var i = 1;
+// var numString = '';
+//
+// while (i <= n){
+//   numString += (i + (i === n ? '' : ', '))
+//   i++;
+// }
+// console.log(numString);
+// document.querySelector("#target").textContent = numString;
+//--------------------------------------------------------
+//Exercise 3 Fencepost Loop part 2 (using innerHTML)
+
+// var n = 10;
+// var i = 1;
+//
+// var numString = '<div id="target">';
+//
+// while (i <= n){
+//   numString += '<p>' + i + (i === n ? '' : ', ') + '</p>'
+//   i++;
+// }
+//
+// numString += "</div>"
+// console.log(numString);
+// document.querySelector('#target').innerHTML = numString;
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 4 Cumulative Sum (preface)
+
+// var n = 1;
+// var sum = 0;
+//
+// while ( n <= 10 ) {
+//   sum += n;
+//   n++;
+// }
+//
+// console.log("the sum of the numbers 1 through " + (n-1) + " is " + sum + ".")
+//--------------------------------------------------------
+//Exercise 4 Cumulative Sum
+
+// product = 1;
+// n = 1;
+//
+// while ( n <= 4 ) {
+//   product *= n;
+//   n++
+// }
+// aString = ("<div id='pretty'><code>The product of the numbers 1 through " + (n-1)  + " is " + product + ".</code></div>");
+//
+// document.querySelector("#target").innerHTML = aString
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 5 Refactor the code below:
+
+// var n = 0
+//
+// while ( n <= 20 ) {
+//   if ( n !== 13 && n % 2 === 0 ) {
+//     console.log("I like the number " + n + ", a nice even number.")
+//   } else if ( n !== 13 && n % 2 !== 0 ) {
+//     console.log("I like the number " + n + ", odd is okay too!")
+//   } else {
+//     console.log("la-la-la, nothing to say here")
+//   }
+//   n++
+// }
+//--------------------------------------------------------
+// var n = 0;
+// var aString = "<ul id='numbers'>";
+//
+// while ( n <= 20) {
+//   if ( n !== 13 && n % 2 === 0 ) {
+//     aString += "<li>I like the number " + n + ", a nice even number.</li>"
+//     document.querySelector("#numbers").innerHTML = aString
+//   } else if ( n !== 13 && n % 2 !== 0 ) {
+//     aString += ("<li>I like the number " + n + ", odd is okay too!</li>")
+//     document.querySelector("#numbers").innerHTML = aString
+//   } else {
+//     aString += ("<li>la-la-la, nothing to say here</li>")
+//     document.querySelector("#numbers").innerHTML = aString
+//   }
+//   n++
+// }
+// aString += '</ul>'
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 6 FizzBuzz
+// var n = 1;
+//
+// while (n < 101){
+//   if (n % 15 === 0){
+//   console.log( n + " FizzBuzz");
+//   document.querySelector('#FizzBuzz').innerHTML += '<p>'+ n + ' FizzBuzz</p>'
+// } else if (n % 3 === 0) {
+//   console.log(n + " Fizz");
+//   document.querySelector('#Fizz').innerHTML += '<p>' +n +  ' Fizz</p>'
+// } if (n % 5 === 0) {
+//   console.log(n + " Buzz");
+//   document.querySelector('#Buzz').innerHTML += '<p>'+ n +  ' Buzz</p>'
+// }
+// n ++;
+// }
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 7 Preface - What does this do?
+
+// var i = 0, j, n = 5
+//
+//
+// while ( i < n ) {
+//   j = 0 // What happens if we remove this line?
+//   while ( j < n ) {
+//     console.log("i is", i, "and j is", j)
+//     j++
+//   }
+//   i++
+// }
+//--------------------------------------------------------
+//Exercise 7 Number Party ???
+// "n" numbers are coming to a party
+// Introduce all numbers as they arrive
+// Output should look like this for n=5:
+// "welcome 1"
+// "welcome 2, meet 1"
+// "welcome 3, meet 1 and 2"
+// "welcome 4, meet 1, 2 and 3"
+// "welcome 5, meet 1, 2, 3 and 4"
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+// Figure out what each of the following does:
+// Math
+// Math.PI
+// Math.E
+// Math.pow(9, 2)
+// Math.random()
+// Math.floor(7.2)
+// Math.ceil(7.2)
+// Math.ceil(Math.random() * 10)
+// Math.ceil(Math.random() * 10)
+//
+// // How about?
+//
+// parseInt("23") //--> parses string and returns int
+// parseInt(23) //--> 23
+// parseInt("boink") //--> NaN
+
+//--------------------------------------------------------
+//Exercise 8 Pick a number
+// Write code that asks a user to enter an integer greater than 0.
+//Here's something to get you started:
+
+// var input;
+//
+// while( !(input = prompt('Enter an integer greater than 0 ')) ){
+//   console.log("You didn't write anything")
+// }
+//
+// console.log("yay, you did it! you wrote: " + parseInt(input))
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 9 Rock, Paper, Scissors
+// Write a text-based Rock, Paper, Scissors game!
+//
+// Ask for input until the user enters either "R", "P", or "S" (for rock, paper, or scissors)
+// Use Math.random( ) to choose a play for the computer
+// Tell the user what the outcome was
+// Ask the user if they'd like to play again
+
+// var userChoice;
+//
+// while ( !(userChoice = prompt("(r)ock (p)aper or (s)cissors? ")) ){
+//   console.log("nothing was entered");
+// }
+// var computerChoice  = Math.random().toFixed(2);
+//
+// if ( 0 <= computerChoice && computerChoice <= 0.33) {
+//   computerChoice = 'r';
+// } else if (0.33 < computerChoice && computerChoice <= 0.66) {
+//   computerChoice = 'p';
+// } else {
+//   computerChoice = 's';
+// }
+//
+// console.log("Computer: " + computerChoice);
+// function compare(user, computer) {
+//   if (user === computer){
+//     return "The result is a tie!"
+//   }
+//   else if (user === 'r') {
+//       if (computer === 's') {
+//         return "You win!";
+//       } else {
+//         return "The computer beat you!"
+//       }
+//   }
+//   else if (user === "p") {
+//       if (computer === 'r') {
+//         return "You win!";
+//     } else {
+//       return "The computer wins!";
+//     }
+//   }
+//   else if (user === "s") {
+//       if (computer === 'r') {
+//         return "The computer wins!";
+//       }
+//     else {
+//       return "You win!";
+//     }
+//   }
+// }
+//
+// console.log(compare(userChoice, computerChoice));
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//Exercise 10 Guess a number
+
+// Prompt the user for an input to determine what the highest integer 'n' should be.
+// Use parseInt(n) to convert from string to number.
+// As long as the result is NaN, ask them again.
+// Generate a random number between 1 and n.
+// Ask the user to guess the number. Tell them if their guess is too high or too low.
+// Loop until they guess correctly.
+//
+// var n = parseInt('a');
+// while (isNaN(n) === true ){
+//   n = parseInt(prompt("What is the highest integer 'n' can be? "));
+// }
+//
+// console.log(n);
+//
+// function getRandomArbitrary(min, max) {
+//   return Math.floor(Math.random() * ( max - min ) + min);
+// }
+//
+// computerNum = (getRandomArbitrary(1, n));
+// console.log(computerNum);
+// userGuess = prompt("Guess my number! ");
+//
+// while (userGuess != computerNum){
+//   if (userGuess < computerNum){
+//     userGuess = prompt("Too low! Guess again! ");
+//   } else {
+//     userGuess = prompt("Too high! Guess again! ");
+//   }
+// }
+// prompt("You guessed it! My number was " + userGuess + ".")
+
+
+
+
+//--------------------------------------------------------
+//Exercise 10 part 2: Guess a number++
+
+// Use .innerHTML to show them something fun as a reward for guessing correctly.
+// Show them what number was the correct number in the end.
+// Use a counter to let them know how many guesses it took them to get the right number.
+
+var n = parseInt('a');
+while (isNaN(n) === true ){
+  n = parseInt(prompt("What is the highest integer 'n' can be? "));
+}
+
+console.log(n);
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * ( max - min ) + min);
+}
+
+computerNum = (getRandomArbitrary(1, n));
+console.log(computerNum);
+userGuess = prompt("Guess my number! ");
+
+while (userGuess != computerNum){
+  if (userGuess < computerNum){
+    userGuess = prompt("Too low! Guess again! ");
+  } else {
+    userGuess = prompt("Too high! Guess again! ");
+  }
+}
+
+prompt("You guessed it! My number was " + userGuess + ".")
+
+
+
+
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+
+//Exercise 11: Interest Rate Calculator
+
+// Ask the user for three pieces of information:
+// a starting balance
+// a target balance
+// an interest rate (where 0.05 = 5%)
+// Use a while loop to calculate the number of investment periods required for the starting balance to have grown larger than the target balance.
+// Set the .textContent of a div with id=output to explain the answer to the user: "To grow an initial investment of $1000 to $2000 at 4.5% will require..."
+
+// console.log('dsada');
+// var sbal = 1000,
+//     wbal = sbal,
+//     tbal = 2000,
+//     rate = .045,
+//
+//     count = 0;
+//
+// while (wbal <= tbal){
+//   wbal += (wbal * rate);
+//   count++;
+// }
+// console.log(wbal);
+// console.log(count);
+//
+// document.querySelector("#output").textContent = "To grow an initial investment of " + Math.floor(sbal) + " to " + tbal + " at " + (rate*100).toFixed(1) +"% will require " + count + " investment periods." ;
+</script>
+</body>
+
+</html>
