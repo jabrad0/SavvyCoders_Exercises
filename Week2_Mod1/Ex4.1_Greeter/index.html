@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>4.1 Greeter</title>
+
+</head>
+
+<body>
+    <h1>Exercise 4.1 Greeter</h1>
+
+    <div id="greeting">
+        <script type="text/javascript">
+            var visitorName = prompt("Yo, What's your Name?");
+            var welcomeMessage = ("Hello " + visitorName +"!");
+            document.getElementById("greeting").textContent = welcomeMessage;
+        </script>
+    </div>
+
+
+    <h1>Exercise 4.2 - Greeter 2</h1>
+    <p>Your hometown is <strong><em><span id="hometown"></span></em></strong>.</p>
+
+    <script type="text/javascript">
+        var town = prompt("Yo, What's your home town?");
+        document.querySelector("#hometown").textContent = town;
+    </script>
+</body>
+
+</html>

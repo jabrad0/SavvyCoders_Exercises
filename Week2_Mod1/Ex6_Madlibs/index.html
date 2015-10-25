@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Madlibs</title>
+<style>
+h1{
+  width:60%;
+  margin:0 auto;
+  background-color: #00bbff
+}
+  #madlib{
+  font-family: sans-serif;
+    width:60%;
+    margin:0 auto;
+  }
+  #source{
+    background-color: #0aaf26;
+  }
+  #destination{
+    background-color: #00bfff;
+  }
+
+</style>
+</head>
+
+<body>
+    <h1>Exercis 6 - MadLibs</h1>
+          <div id="madlib">
+            <p>Your hometown is <strong><em><span id="city"></span></em></strong>.</p>
+
+            <p>While there, you lived in a <strong><em><span id="adjective"></span></em></strong> house.</p>
+
+            <p>You often <strong><em><span id="adverb"></span></em></strong> ran to the  <strong><em><span id="place"></span></em></strong> with your <strong><em><span id="animaltype"></span></em></strong>.</p>
+          </div>
+
+
+    <script type="text/javascript">
+            var city = prompt("Give me a city:");
+            var adjective = prompt("Give me an adjective:");
+            var adverb = prompt("Give me an adverb:");
+            var place = prompt("Give me another place (building):");
+            var animalType = prompt("Give me a type of animal:");
+
+            document.querySelector("#city").textContent = city;
+            document.querySelector("#adjective").textContent = adjective;
+            document.querySelector("#adverb").textContent = adverb;
+            document.querySelector("#place").textContent = place;
+            document.querySelector("#animaltype").textContent = animalType;
+
+        </script>
+
+</body>
+
+</html>

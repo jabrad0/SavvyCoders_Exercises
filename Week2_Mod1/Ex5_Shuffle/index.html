@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Shuffle</title>
+    <style>
+        #source {
+            background-color: #0aaf26;
+            margin:5px;
+        }
+        #destination {
+            background-color: #00bfff;
+            margin:5px;
+        }
+        #swap-1,
+        #swap-2 {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercise 5 - Shuffle</h1>
+    <div id="source">
+        <p>This is the source div.</p>
+    </div>
+
+    <div id="destination">
+        <p> This is the destination div.</p>
+    </div>
+    <div id="swap-1">
+        <p hidden></p>
+    </div>
+
+    <div id="swap-2">
+        <p hidden></p>
+    </div>
+
+    <script type="text/javascript">
+        var sourceText =
+            document.querySelector("#source").textContent;
+        var destinationText =
+            document.querySelector("#destination").textContent;
+
+        document.querySelector("#swap-1").textContent = sourceText + "(post-swap)";
+        document.querySelector("#swap-2").textContent = destinationText + "(post-swap)";
+
+        var newsourceText =
+            document.querySelector("#swap-1").textContent;
+        var newdestinationText =
+            document.querySelector("#swap-2").textContent;
+
+        document.querySelector("#source").textContent = newdestinationText;
+        document.querySelector("#destination").textContent = newsourceText;
+    </script>
+
+</body>
+
+</html>
